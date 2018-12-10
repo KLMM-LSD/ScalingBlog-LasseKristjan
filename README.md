@@ -95,7 +95,7 @@ It's apparent from our plots, that the experiment has resulted in a slightly hig
 You can see that by being farther (singapore) away, the minimum latency is a lot worse. It is actually about as bad as the worst case on the split setup. The interesting thing here is that by scaling horizontally you would perform MUCH better, simply because you can improve the proximity with several droplets.
 
 ### Cost
-In our case, running on two smaller VMs instead of a single big one gives a 60% reduction in Web Server and Database hosting, from $20 per month down to 10$ per month.
+In our case, running on two smaller VMs instead of a single big one gives a 50% reduction in Web Server and Database hosting, from $20 per month down to 10$ per month.
 
 ## Conclusion
 In our case, the actual improvements we've seen in performance aren't exactly mindblowing, but this was to be expected given the power of our current production server. However, we were able to identify where it is possible to shave some money off our expenses, and we hope we have shown that that this way of structuring a multi-user application can be interesting to explore, especially if your application has a large, international audience.
