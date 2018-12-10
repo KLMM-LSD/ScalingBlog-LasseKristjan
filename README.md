@@ -70,21 +70,21 @@ In order to test this hypothesis, we designed an experiment that would let us co
 
 ### Plots
 ##### Current setup:
-Frankfurt(Client) -> Frankfurt(Server+DB) (3 x 1000 requests)
+Frankfurt(Client) -> Frankfurt(Server+DB) (3 x 1000 requests Concurrently)
 
 1st Run                                      |  2nd Run                                     |  3rd Run
 :-------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:
 ![Frankfurt to Frankfurt, 1st run][fra-fra1] | ![Frankfurt to Frankfurt, 2nd run][fra-fra2] | ![Frankfurt to Frankfurt, 3rd run][fra-fra3]
 
 ##### International connection
-Singapore -> Frankfurt (3 x 50 requests)
+Singapore -> Frankfurt (3 x 50 requests Concurrently)
 
 1st Run                                      |  2nd Run                                     |  3rd Run
 :-------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:
 ![Singapore to Frankfurt, 1st run][sgp-fra1] | ![Singapore to Frankfurt, 2nd run][sgp-fra2] | ![Singapore to Frankfurt, 3rd run][sgp-fra3]
 
 ##### Split setup as proposed
-Frankfurt(Client) -> Frankfurt(Server) -> Frankfurt(DB) (3 x 1000 requests)
+Frankfurt(Client) -> Frankfurt(Server) -> Frankfurt(DB) (3 x 1000 requests Concurrently)
 
 1st Run                                                            |  2nd Run                                                           |  3rd Run
 :-----------------------------------------------------------------:|:------------------------------------------------------------------:|:--------------------------------------------------------------------:
@@ -95,7 +95,7 @@ It's apparent from our plots, that the experiment has resulted in a slightly hig
 You can see that by being farther (singapore) away, the minimum latency is a lot worse. It is actually about as bad as the worst case on the split setup. The interesting thing here is that by scaling horizontally you would perform MUCH better, simply because you can improve the proximity with several droplets.
 
 ### Cost
-In our case, running on two smaller VMs instead of a single big one gives a 40% reduction in Web Server and Database hosting, from $25 per month down to 15$ per month.
+In our case, running on two smaller VMs instead of a single big one gives a 60% reduction in Web Server and Database hosting, from $20 per month down to 10$ per month.
 
 ## Conclusion
 In our case, the actual improvements we've seen in performance aren't exactly mindblowing, but this was to be expected given the power of our current production server. However, we were able to identify where it is possible to shave some money off our expenses, and we hope we have shown that that this way of structuring a multi-user application can be interesting to explore, especially if your application has a large, international audience.
