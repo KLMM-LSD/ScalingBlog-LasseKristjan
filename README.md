@@ -104,18 +104,19 @@ In our case, the actual improvements we've seen in performance aren't exactly mi
 One of the benefits we expected to reap from splitting up our system in this way is an improved ability to serve international users. With a single centralized server, we are unable to provide similar response times worldwide, since some users may be on the other side of the world. Separating our Database and Frontend opens up the possibilit of hosting the front-end in a distributed manner, all across the globe, while still referring to our centralized data store. By letting the front-end cache Database results locally for a short time, we might avoid having to send a slow, international request to the Database for every single view of the frontpage for example. Unique requests however, such as when a user creates a post, or views a thread that hasn't been opened in a while would still incur the full cost of a database look-up, but presumably no more than a long-distance request already does. This is something we would like to explore further in the future.
 
 ## References
-REST statelessness explained
+
+##### REST statelessness explained
 https://restfulapi.net/statelessness/
 
-Cloud Scalability: Scale Up vs Scale Out
+##### Cloud Scalability: Scale Up vs Scale Out
 https://turbonomic.com/blog/on-technology/cloud-scalability-scale-vs-scale/
 
-[fra-fra1]: http://46.101.171.5:8000/plot1544397324.4651082.png
-[fra-fra2]: http://46.101.171.5:8000/plot1544397324.8890862.png
-[fra-fra3]: http://46.101.171.5:8000/plot1544397325.1036382.png
-[sgp-fra1]: http://46.101.171.5:8000/plot1544399846.311562.png
-[sgp-fra2]: http://46.101.171.5:8000/plot1544399848.7226975.png
-[sgp-fra3]: http://46.101.171.5:8000/plot1544399849.0818636.png
-[fra-fra-fra1]: http://46.101.171.5:8000/split/plot1544401248.2294571.png
-[fra-fra-fra2]: http://46.101.171.5:8000/split/plot1544401249.2195637.png
-[fra-fra-fra3]: http://46.101.171.5:8000/split/plot1544401249.3552957.png
+[fra-fra1]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt1.png
+[fra-fra2]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt2.png
+[fra-fra3]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt3.png
+[sgp-fra1]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Singapore-Frankfurt1.png
+[sgp-fra2]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Singapore-Frankfurt2.png
+[sgp-fra3]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Singapore-Frankfurt3.png
+[fra-fra-fra1]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt-Frankfurt1.png
+[fra-fra-fra2]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt-Frankfurt2.png
+[fra-fra-fra3]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt-Frankfurt3.png
