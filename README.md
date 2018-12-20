@@ -1,5 +1,5 @@
 # Efficient scaling of Multi-paradigm computer systems
-
+##### Lasse Hansen & Kristjan R. Gásadal
 As a website's traffic increases, so does the load on server equipment. This can lead to long response times, instability and even complete service shutdowns, making it impossible to ensure a good experience for all of your users. By separating the hosting of your business logic and Relational Database, you can optimize workloads with a combination of vertical and horizontal scaling. This lets you deliver a stable, responsive experience to your users, at a lower cost than simply throwing money at your hosting provider.
 
 ## Introduction
