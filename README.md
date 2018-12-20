@@ -115,12 +115,12 @@ https://restfulapi.net/statelessness/
 ##### Cloud Scalability: Scale Up vs Scale Out
 https://turbonomic.com/blog/on-technology/cloud-scalability-scale-vs-scale/
 
-[fra-fra1]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt1.png
-[fra-fra2]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt2.png
-[fra-fra3]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt3.png
-[sgp-fra1]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Singapore-Frankfurt1.png
-[sgp-fra2]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Singapore-Frankfurt2.png
-[sgp-fra3]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Singapore-Frankfurt3.png
-[fra-fra-fra1]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt-Frankfurt1.png
-[fra-fra-fra2]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt-Frankfurt2.png
-[fra-fra-fra3]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/Frankfurt-Frankfurt-Frankfurt3.png
+[fra-fra1]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/legend/Frankfurt-Frankfurt1.png
+[fra-fra2]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/legend/Frankfurt-Frankfurt2.png
+[fra-fra3]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/legend/Frankfurt-Frankfurt3.png
+[sgp-fra1]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/legend/Singapore-Frankfurt1.png
+[sgp-fra2]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/legend/Singapore-Frankfurt2.png
+[sgp-fra3]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/legend/Singapore-Frankfurt3.png
+[fra-fra-fra1]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/legend/Frankfurt-Frankfurt-Frankfurt1.png
+[fra-fra-fra2]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/legend/Frankfurt-Frankfurt-Frankfurt2.png
+[fra-fra-fra3]: https://raw.githubusercontent.com/KLMM-LSD/ScalingBlog-LasseKristjan/master/img/legend/Frankfurt-Frankfurt-Frankfurt3.png
