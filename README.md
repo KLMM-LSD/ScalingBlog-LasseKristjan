@@ -46,7 +46,9 @@ This led us to assume our system to be needlessly overpowered, but unable to con
 
 ## Experimental setup
 
-In order to test this hypothesis, we designed an experiment that would let us compare the performance of our system with and without the proposed changes. This involved setting up two smaller VMs, each with a quarter of the memory and half the CPUs of our production server.  
+In order to test this hypothesis, we designed an experiment that would let us compare the performance of our system with and without the proposed changes. This involved setting up two smaller VMs, each with a quarter of the memory and half the CPUs of our production server.
+We invented a test scenario that would keep loading the absolutely longest thread (1000+ posts) over and over in a loop. Response times would be measured from another droplet. Now is that a relevant load? Not at all but it is the only one where any slowdown is measurable. 
+There was a service level agreement that the frontpage should not load slower than 2-3 seconds, but it says nothing about loading threads. Loading the frontpage in a loop failed to slow it down at all.
 
 ##### Droplet A2 (Frankfurt):
 ```
@@ -91,15 +93,17 @@ Frankfurt(Client) -> Frankfurt(Server) -> Frankfurt(DB) (3 x 1000 requests Concu
 ![Frankfurt through Frankfurt to Frankfurt, 1st run][fra-fra-fra1] | ![Frankfurt through Frankfurt to Frankfurt, 2nd run][fra-fra-fra2] | ![Frankfurt through Frankfurt to Frankfurt, 3rd run][fra-fra-fra3]
 
 ### Performance
-It's apparent from our plots, that the experiment has resulted in a slightly higher minimum - and a lower maximum - response time for the short-distance case. 
+It's apparent from our plots, that the experiment has resulted in a slightly lower minimum - and a lower maximum - response time for the short-distance case. It is a flat-out improvement in all cases, but it is not too big. An interesting observation to make is that the frontend droplet was at 100% CPU and that the backend droplet was at 10% CPU. This was while using the cheapest possible droplets.
+By splitting up the services like this, you actually lose some capacity to handle the load.
+
 You can see that by being farther (singapore) away, the minimum latency is a lot worse. It is actually about as bad as the worst case on the split setup. The interesting thing here is that by scaling horizontally you would perform MUCH better, simply because you can improve the proximity with several droplets.
+Realistically though the real ""fix"" is not to throw more computing resources at it but to fix the problem somewhere else. Nobody reads 1000 posts just like that, so if the system was made to read in smaller chunks at a time, it should be OK.
 
 ### Cost
 In our case, running on two smaller VMs instead of a single big one gives a 50% reduction in Web Server and Database hosting, from $20 per month down to 10$ per month.
 
 ## Conclusion
 In our case, the actual improvements we've seen in performance aren't exactly mindblowing, but this was to be expected given the power of our current production server. However, we were able to identify where it is possible to shave some money off our expenses, and we hope we have shown that that this way of structuring a multi-user application can be interesting to explore, especially if your application has a large, international audience.
-
 ## Future experiments
 One of the benefits we expected to reap from splitting up our system in this way is an improved ability to serve international users. With a single centralized server, we are unable to provide similar response times worldwide, since some users may be on the other side of the world. Separating our Database and Frontend opens up the possibilit of hosting the front-end in a distributed manner, all across the globe, while still referring to our centralized data store. By letting the front-end cache Database results locally for a short time, we might avoid having to send a slow, international request to the Database for every single view of the frontpage for example. Unique requests however, such as when a user creates a post, or views a thread that hasn't been opened in a while would still incur the full cost of a database look-up, but presumably no more than a long-distance request already does. This is something we would like to explore further in the future.
 
