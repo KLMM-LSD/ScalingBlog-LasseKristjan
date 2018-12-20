@@ -71,7 +71,7 @@ There was a service level agreement that the frontpage should not load slower th
 ## Results
 
 ### Plots
-These charts show the distribution of response times over the either 1000 or 50 requests for each of the three runs of each experiment. The y-axis is the response time, and the x-axis is the requests, sorted from fastest to slowest. Please note that the plots for the Singapore to Frankfurt experiment do not start at 0 on the y-axis, so they should not be compared without taking this offset into account. 
+These charts show the response time distribution of response times for three runs of each experimental configuration. The y-axis is the response time, and the x-axis is the requests, sorted from fastest to slowest. Please note that the plots for the Singapore to Frankfurt experiment do not start at 0 on the y-axis, so they should not be compared without taking this offset into account. 
 
 ##### Current setup:
 Frankfurt(Client) -> Frankfurt(Server+DB) (3 x 1000 requests Concurrently)
